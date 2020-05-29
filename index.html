@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* Set the size of the div element that contains the map */
+        #map {
+            height: 400px;  /* De hoogte is 400 pixels */
+            width: 100%;  /* De breedte is het breedte van de web pagina */
+        }
+    </style>
+</head>
+<body>
+<h1>My Google Maps Demo</h1>
+<!--The div element voor de map -->
+<div id="map"></div>
+
+ <script>
+    //initialize en voeg een map toe
+    function initMap() {
+        // De locatie van Uluru
+        var Uluru = {
+            lat: -25.344, lng: 131.036
+        };
+        // De map, gecentreerd op uluru
+        var map = new google.maps.Map(document.
+        getElementById('map'),
+            {
+                zoom: 4, center: Uluru
+            });
+        // De marker, gepositioneerd op Uluru
+        var marker = new google.maps.Marker({
+            position: Uluru,
+            map: map
+        });
+    }
+</script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ56-xfnCQoV2-TC9Ztp9RfDY_9ODl67U&callback=initMap"></script>
+
+</body>
+</html>
